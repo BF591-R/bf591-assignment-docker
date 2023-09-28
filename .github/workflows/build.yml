@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
-      - run: docker build -t bf591-r-docker .
+      - run: docker build -t ghcr.io/bf591-r/bf591-r-docker .
       - run: docker push ghcr.io/bf591-r/bf591-r-docker:latest
 
 
