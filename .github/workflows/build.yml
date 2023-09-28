@@ -8,10 +8,10 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
       - run: |
-        IMG_ID=ghcr.io/bf591-r/bf591-r-docker
-        VERSION=`cat VERSION`
-        docker build -t $IMG_ID:$VERSION -t $IMG_ID:latest  .
-        echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
-        docker push ghcr.io/bf591-r/bf591-r-docker:$VERSION
-        docker push ghcr.io/bf591-r/bf591-r-docker:latest
+          IMG_ID=ghcr.io/bf591-r/bf591-r-docker
+          VERSION=`cat VERSION`
+          docker build -t $IMG_ID:$VERSION -t $IMG_ID:latest  .
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+          docker push ghcr.io/bf591-r/bf591-r-docker:$VERSION
+          docker push ghcr.io/bf591-r/bf591-r-docker:latest
 
