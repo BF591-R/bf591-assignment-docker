@@ -7,9 +7,10 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
-      - run: docker build -t ghcr.io/bf591-r/bf591-r-docker .
+      - run: IMG_ID=ghcr.io/bf591-r/bf591-r-docker
+      - run: VERSION=$(cat VERSION)
+      - run: docker build -t $IMG_ID:$VERSION -t $IMG_ID:latest  .
       - run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+      - run: docker push ghcr.io/bf591-r/bf591-r-docker:$VERSION
       - run: docker push ghcr.io/bf591-r/bf591-r-docker:latest
-      
-
 
