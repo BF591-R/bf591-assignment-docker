@@ -1,0 +1,11 @@
+---
+title: test markdown
+---
+
+```{r}
+source("main.R")
+```
+
+```{r}
+add(3)
+```
