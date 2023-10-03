@@ -4,6 +4,7 @@ RUN apt update && apt upgrade -y
 RUN apt install -y gh
 COPY install.R /
 RUN Rscript /install.R
+RUN apt install -y pandoc # needed by rmarkdown
 COPY entrypoint.sh /
 COPY test.R /
 COPY knit.R /

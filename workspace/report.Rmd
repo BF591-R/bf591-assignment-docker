@@ -1,5 +1,7 @@
 ---
-title: test markdown
+title: "test markdown"
+author: "Adam Labadorf"
+output: html_document
 ---
 
 ```{r}
@@ -7,5 +9,5 @@ source("main.R")
 ```
 
 ```{r}
-add(3)
+add3(3)
 ```
