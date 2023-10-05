@@ -1,10 +1,13 @@
-FROM r-base:4.3.1
+FROM continuumio/miniconda3
 RUN apt update && apt upgrade -y
-# install github cli to update repo later
-RUN apt install -y gh
-COPY install.R /
-RUN Rscript /install.R
-RUN apt install -y pandoc # needed by rmarkdown
+RUN apt install -y libxml2-dev libcurl4-openssl-dev libssl-dev libfontconfig1-dev \
+    libharfbuzz-dev libfribidi-dev libfreetype-dev libpng-dev libtiff5-dev libjpeg-dev \
+    pandoc libxt-dev
+RUN apt install -y libarchive-dev
+#COPY install.R /
+#RUN Rscript /install.R
+RUN conda install -y -c conda-forge mamba
+RUN mamba install -y -c conda-forge r-tidyverse r-testthat
 COPY entrypoint.sh /
 COPY test.R /
 COPY knit.R /
