@@ -25,7 +25,7 @@ generate_report <- function(test_fn) {
                  c(
                    result=gsub("expectation_", "", class(test)[1]),
                    test=test$test,
-                   message=test$message
+                   message=gsub("\n"," ",test$message)
                  )
                }
           )
