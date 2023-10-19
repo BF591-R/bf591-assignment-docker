@@ -38,4 +38,4 @@ generate_report <- function(test_fn) {
 
 res <- generate_report(test_fn)
 
-readr::write_csv(res, file=out_fn)
+readr::write_tsv(res, file=out_fn)
