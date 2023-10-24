@@ -12,6 +12,7 @@ RUN Rscript -e 'install.packages("testthat", repos="https://cloud.r-project.org"
 RUN Rscript -e 'install.packages("BiocManager", repos="https://cloud.r-project.org")'
 RUN Rscript -e 'install.packages("ggVennDiagram", repos="https://cloud.r-project.org")'
 RUN Rscript -e 'install.packages("kableExtra", repos="https://cloud.r-project.org")'
+RUN Rscript -e 'install.packages("shiny", repos="https://cloud.r-project.org")'
 
 COPY install.R /
 RUN Rscript /install.R
